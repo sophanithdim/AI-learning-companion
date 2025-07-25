@@ -1,6 +1,5 @@
 import CompanionCard from "@/components/CompanionCard";
 import CompanionsList from "@/components/CompanionsList";
-import CTA from "@/components/CTA";
 import { recentSessions } from "@/constants";
 import {
   getAllCompanions,
@@ -9,44 +8,96 @@ import {
 } from "@/lib/actions/companion.actions";
 import { getSubjectColor } from "@/lib/utils";
 import { auth } from "@clerk/nextjs/server";
+import { Suspense, lazy } from "react";
 
-const Page = async () => {
-  const { userId } = await auth();
-  const companions = await getAllCompanions({ limit: 3 });
-  const recentSessionsCompanions = await getRecentSessions(10);
+// Lazy load the CTA component
+const CTA = lazy(() => import("@/components/CTA"));
 
+// Separate components for each section to enable streaming and suspense
+const PopularCompanions = async () => {
+  // Use Promise.all to fetch data in parallel
+  const [companions, authResult] = await Promise.all([
+    getAllCompanions({ limit: 3 }),
+    auth()
+  ]);
+
+  const { userId } = authResult;
+
+  // Only fetch bookmarks if user is logged in
   const bookmarkedCompanions: Companion[] = userId
     ? await getBookmarkedCompanions(userId)
     : [];
 
-  // ✅ Create a Set of bookmarked IDs for fast lookup
+  // Create a Set of bookmarked IDs for fast lookup
   const bookmarkedIds = new Set(bookmarkedCompanions.map((comp) => comp.id));
 
   return (
-    <main>
+    <>
       <h1>Popular Companions</h1>
-
       <section className="home-section">
         {companions.map((companion) => (
           <CompanionCard
             key={companion.id}
             {...companion}
-            bookmarked={bookmarkedIds.has(companion.id)} // ✅ Add bookmarked prop
+            bookmarked={bookmarkedIds.has(companion.id)}
             color={getSubjectColor(companion.subject)}
           />
         ))}
       </section>
+    </>
+  );
+};
+
+// Loading fallback for popular companions
+const PopularCompanionsLoading = () => (
+  <>
+    <h1>Popular Companions</h1>
+    <section className="home-section">
+      <div className="animate-pulse bg-gray-200 h-64 w-full rounded-lg"></div>
+      <div className="animate-pulse bg-gray-200 h-64 w-full rounded-lg"></div>
+      <div className="animate-pulse bg-gray-200 h-64 w-full rounded-lg"></div>
+    </section>
+  </>
+);
+
+// Component for recent sessions
+const RecentSessions = async () => {
+  const recentSessionsCompanions = await getRecentSessions(10);
+
+  return (
+    <CompanionsList
+      title="Recently completed sessions"
+      companions={recentSessionsCompanions}
+      classNames="w-2/3 max-lg:w-full"
+    />
+  );
+};
+
+// Loading fallback for recent sessions
+const RecentSessionsLoading = () => (
+  <div className="w-2/3 max-lg:w-full">
+    <h2 className="font-bold text-3xl">Recently completed sessions</h2>
+    <div className="animate-pulse bg-gray-200 h-64 w-full rounded-lg mt-4"></div>
+  </div>
+);
+
+// Main page component
+export default function Page() {
+  return (
+    <main>
+      {/* Use Suspense to avoid blocking the initial render */}
+      <Suspense fallback={<PopularCompanionsLoading />}>
+        <PopularCompanions />
+      </Suspense>
 
       <section className="home-section">
-        <CompanionsList
-          title="Recently completed sessions"
-          companions={recentSessionsCompanions}
-          classNames="w-2/3 max-lg:w-full"
-        />
-        <CTA />
+        <Suspense fallback={<RecentSessionsLoading />}>
+          <RecentSessions />
+        </Suspense>
+        <Suspense fallback={<div className="cta-section animate-pulse bg-gray-200 h-64 w-full rounded-lg"></div>}>
+          <CTA />
+        </Suspense>
       </section>
     </main>
   );
 };
-
-export default Page;

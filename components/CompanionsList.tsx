@@ -42,7 +42,8 @@ const CompanionsList = ({ title, companions, classNames }: CompanionsListProps) 
                                                 src={`/icons/${subject}.svg`}
                                                 alt={subject}
                                                 width={35}
-                                                height={35} />
+                                                height={35}
+                                                loading="eager" />
                                         </div>
                                         <div className="flex flex-col gap-2">
                                             <p className="font-bold text-2xl">
@@ -65,6 +66,7 @@ const CompanionsList = ({ title, companions, classNames }: CompanionsListProps) 
                                 alt={subject}
                                 width={18}
                                 height={18}
+                                loading="eager"
                             />
                                 </div>
                             </TableCell>
@@ -74,7 +76,7 @@ const CompanionsList = ({ title, companions, classNames }: CompanionsListProps) 
                                         {duration} {' '}
                                         <span className="max-md:hidden">mins</span>
                                     </p>
-                                    <Image src="/icons/clock.svg" alt="minutes" width={14} height={14} className="md:hidden" />
+                                    <Image src="/icons/clock.svg" alt="minutes" width={14} height={14} className="md:hidden" loading="eager" />
                                 </div>
                             </TableCell>
                         </TableRow>

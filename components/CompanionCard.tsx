@@ -36,6 +36,7 @@ const CompanionCard = ({
             alt="bookmark"
             width={12.5}
             height={15}
+            loading="eager"
           />
         </button>
       </div>
@@ -48,6 +49,7 @@ const CompanionCard = ({
           alt="duration"
           width={13.5}
           height={13.5}
+          loading="eager"
         />
         <p className="text-sm">{duration} minutes</p>
       </div>

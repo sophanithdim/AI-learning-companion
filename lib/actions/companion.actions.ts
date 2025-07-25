@@ -86,7 +86,15 @@ export const getRecentSessions = async (limit = 10) => {
 
     if(error) throw new Error(error.message);
 
-    return data.map(({ companions }) => companions);
+    // Deduplicate companions by ID to prevent duplicate keys in React
+    const uniqueCompanions = new Map();
+    data.forEach(({ companions }) => {
+        if (companions && !uniqueCompanions.has(companions.id)) {
+            uniqueCompanions.set(companions.id, companions);
+        }
+    });
+
+    return Array.from(uniqueCompanions.values());
 }
 
 export const getUserSessions = async (userId: string, limit = 10) => {
@@ -100,7 +108,15 @@ export const getUserSessions = async (userId: string, limit = 10) => {
 
     if(error) throw new Error(error.message);
 
-    return data.map(({ companions }) => companions);
+    // Deduplicate companions by ID to prevent duplicate keys in React
+    const uniqueCompanions = new Map();
+    data.forEach(({ companions }) => {
+        if (companions && !uniqueCompanions.has(companions.id)) {
+            uniqueCompanions.set(companions.id, companions);
+        }
+    });
+
+    return Array.from(uniqueCompanions.values());
 }
 
 export const getUserCompanions = async (userId: string) => {
@@ -190,6 +206,14 @@ export const getBookmarkedCompanions = async (userId: string) => {
   if (error) {
     throw new Error(error.message);
   }
-  // We don't need the bookmarks data, so we return only the companions
-  return data.map(({ companions }) => companions);
+
+  // Deduplicate companions by ID to prevent duplicate keys in React
+  const uniqueCompanions = new Map();
+  data.forEach(({ companions }) => {
+    if (companions && !uniqueCompanions.has(companions.id)) {
+      uniqueCompanions.set(companions.id, companions);
+    }
+  });
+
+  return Array.from(uniqueCompanions.values());
 };

@@ -34,7 +34,7 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
         }
     }, [isSpeaking, lottieRef])
 
-    
+
     useEffect(() => {
         const onCallStart = () => setCallStatus(CallStatus.ACTIVE);
 
@@ -107,7 +107,7 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
                                 'absolute transition-opacity duration-1000', callStatus === CallStatus.FINISHED || callStatus === CallStatus.INACTIVE ? 'opacity-1001' : 'opacity-0', callStatus === CallStatus.CONNECTING && 'opacity-100 animate-pulse'
                             )
                         }>
-                            <Image src={`/icons/${subject}.svg`} alt={subject} width={150} height={150} className="max-sm:w-fit" />
+                            <Image src={`/icons/${subject}.svg`} alt={subject} width={150} height={150} className="max-sm:w-fit" loading="eager" />
                         </div>
 
                         <div className={cn('absolute transition-opacity duration-1000', callStatus === CallStatus.ACTIVE ? 'opacity-100': 'opacity-0')}>
@@ -124,13 +124,13 @@ const CompanionComponent = ({ companionId, subject, topic, name, userName, userI
 
                 <div className="user-section">
                     <div className="user-avatar">
-                        <Image src={userImage} alt={userName} width={130} height={130} className="rounded-lg" />
+                        <Image src={userImage} alt={userName} width={130} height={130} className="rounded-lg" loading="eager" />
                         <p className="font-bold text-2xl">
                             {userName}
                         </p>
                     </div>
                     <button className="btn-mic" onClick={toggleMicrophone} disabled={callStatus !== CallStatus.ACTIVE}>
-                        <Image src={isMuted ? '/icons/mic-off.svg' : '/icons/mic-on.svg'} alt="mic" width={36} height={36} />
+                        <Image src={isMuted ? '/icons/mic-off.svg' : '/icons/mic-on.svg'} alt="mic" width={36} height={36} loading="eager" />
                         <p className="max-sm:hidden">
                             {isMuted ? 'Turn on microphone' : 'Turn off microphone'}
                         </p>
