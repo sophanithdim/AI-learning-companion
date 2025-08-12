@@ -1,0 +1,26 @@
+<svg width="46" height="44" viewBox="0 0 46 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="46" height="44" rx="8" fill="url(#paint0_linear)"/>
+  
+  <!-- Book/learning element -->
+  <path d="M23 12L32 16V30L23 26L14 30V16L23 12Z" fill="white" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M23 12V26" stroke="url(#paint1_linear)" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Stylized "LC" for Learning Companion -->
+  <path d="M19 18H18V24H19" stroke="url(#paint1_linear)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 18C28 18 26 18 26 21C26 24 28 24 28 24" stroke="url(#paint1_linear)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="36" cy="10" r="2" fill="white" fill-opacity="0.5"/>
+  <circle cx="10" cy="34" r="2" fill="white" fill-opacity="0.5"/>
+  
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="46" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="14" y1="12" x2="32" y2="30" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+</svg>

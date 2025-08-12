@@ -25,37 +25,45 @@ const CompanionCard = ({
     }
   };
   return (
-    <article className="companion-card" style={{ backgroundColor: color }}>
+    <article className="companion-card hover-scale animate-fade-in" style={{ backgroundColor: 'white' }}>
       <div className="flex justify-between items-center">
         <div className="subject-badge">{subject}</div>
-        <button className="companion-bookmark" onClick={handleBookmark}>
+        <button 
+          className="companion-bookmark hover-lift" 
+          onClick={handleBookmark}
+          aria-label={bookmarked ? "Remove bookmark" : "Add bookmark"}
+        >
           <Image
             src={
-              bookmarked ? "/icons/bookmark-filled.svg" : "/icons/bookmark.svg"
+              bookmarked ? "/icons/bookmark-filled-modern.svg" : "/icons/bookmark-modern.svg"
             }
             alt="bookmark"
-            width={12.5}
-            height={15}
+            width={14}
+            height={16}
             loading="eager"
           />
         </button>
       </div>
 
-      <h2 className="text-2xl font-bold">{name}</h2>
-      <p className="text-sm">{topic}</p>
-      <div className="flex items-center gap-2">
+      <div>
+        <h2 className="text-2xl font-bold text-foreground">{name}</h2>
+        <p className="text-sm text-muted-foreground mt-1">{topic}</p>
+      </div>
+
+      <div className="flex items-center gap-2 text-muted-foreground">
         <Image
-          src="/icons/clock.svg"
+          src="/icons/clock-modern.svg"
           alt="duration"
-          width={13.5}
-          height={13.5}
+          width={14}
+          height={14}
           loading="eager"
+          className="opacity-70"
         />
-        <p className="text-sm">{duration} minutes</p>
+        <p className="text-sm font-medium">{duration} minutes</p>
       </div>
 
       <Link href={`/companions/${id}`} className="w-full">
-        <button className="btn-primary w-full justify-center">
+        <button className="btn-primary w-full justify-center hover-lift">
           Launch Lesson
         </button>
       </Link>

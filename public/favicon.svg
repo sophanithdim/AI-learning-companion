@@ -1,0 +1,18 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="6" fill="url(#paint0_linear)"/>
+  
+  <!-- Simplified book element for favicon -->
+  <path d="M16 8L23 11V22L16 19L9 22V11L16 8Z" fill="white" stroke="white" stroke-width="1" stroke-linejoin="round"/>
+  <path d="M16 8V19" stroke="url(#paint1_linear)" stroke-width="1" stroke-linecap="round"/>
+  
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="9" y1="8" x2="23" y2="22" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+</svg>

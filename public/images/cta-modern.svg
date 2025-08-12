@@ -1,0 +1,102 @@
+<svg width="362" height="232" viewBox="0 0 362 232" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background elements -->
+  <rect x="10" y="10" width="342" height="212" rx="16" fill="url(#paint0_linear)" opacity="0.1"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="40" cy="40" r="12" fill="#4F46E5" opacity="0.2"/>
+  <circle cx="320" cy="60" r="8" fill="#8B5CF6" opacity="0.2"/>
+  <circle cx="280" cy="180" r="10" fill="#06B6D4" opacity="0.2"/>
+  
+  <!-- Main book/document element -->
+  <g filter="url(#drop_shadow)">
+    <path d="M180 70L240 90V170L180 150L120 170V90L180 70Z" fill="url(#paint1_linear)"/>
+    <path d="M180 70V150M240 90V170L180 150L120 170V90L180 70L240 90Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Book pages -->
+    <path d="M130 100H170" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+    <path d="M130 110H160" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+    <path d="M130 120H165" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+    <path d="M130 130H155" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+    
+    <path d="M190 100H230" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+    <path d="M190 110H220" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+    <path d="M190 120H225" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+    <path d="M190 130H215" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Learning companion elements -->
+  <g filter="url(#drop_shadow2)">
+    <rect x="60" y="120" width="60" height="60" rx="12" fill="white"/>
+    <path d="M90 135V165" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+    <path d="M75 150H105" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <g filter="url(#drop_shadow2)">
+    <rect x="240" y="120" width="60" height="60" rx="12" fill="white"/>
+    <path d="M270 140C270 140 275 145 275 150C275 155 270 160 270 160" stroke="#06B6D4" stroke-width="2" stroke-linecap="round"/>
+    <path d="M260 140C260 140 255 145 255 150C255 155 260 160 260 160" stroke="#06B6D4" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="270" cy="135" r="3" fill="#06B6D4"/>
+    <circle cx="260" cy="135" r="3" fill="#06B6D4"/>
+  </g>
+  
+  <!-- Stars -->
+  <path d="M50 60L53 66L60 67L55 72L56 79L50 76L44 79L45 72L40 67L47 66L50 60Z" fill="#FBBF24"/>
+  <path d="M300 100L302 104L307 105L303.5 108.5L304 113L300 111L296 113L296.5 108.5L293 105L298 104L300 100Z" fill="#FBBF24"/>
+  <path d="M200 40L202 44L207 45L203.5 48.5L204 53L200 51L196 53L196.5 48.5L193 45L198 44L200 40Z" fill="#FBBF24"/>
+  
+  <!-- Floating UI elements -->
+  <g filter="url(#drop_shadow3)">
+    <rect x="70" y="80" width="40" height="20" rx="10" fill="white"/>
+    <circle cx="80" cy="90" r="5" fill="#4F46E5"/>
+    <path d="M90 90H100" stroke="#4F46E5" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <g filter="url(#drop_shadow3)">
+    <rect x="250" y="80" width="40" height="20" rx="10" fill="white"/>
+    <circle cx="260" cy="90" r="5" fill="#8B5CF6"/>
+    <path d="M270 90H280" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Defs for gradients and filters -->
+  <defs>
+    <linearGradient id="paint0_linear" x1="10" y1="10" x2="352" y2="222" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0.2"/>
+    </linearGradient>
+    
+    <linearGradient id="paint1_linear" x1="120" y1="70" x2="240" y2="170" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#E2E8F0"/>
+    </linearGradient>
+    
+    <filter id="drop_shadow" x="115" y="65" width="130" height="110" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="2"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    
+    <filter id="drop_shadow2" x="55" y="115" width="250" height="70" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="2"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    
+    <filter id="drop_shadow3" x="65" y="75" width="230" height="30" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="2"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+</svg>

@@ -9,12 +9,17 @@ const Navbar = () => {
             <Link href="/">
                 <div className="flex items-center gap-2.5 cursor-pointer">
                     <Image
-                        src="/images/logo.svg"
+                        src="/images/logo-modern.svg"
                         alt="logo"
                         width={46}
                         height={44}
                         loading="eager"
+                        className="hover:scale-105 transition-transform duration-300"
                     />
+                    <div className="flex flex-col">
+                        <span className="font-bold text-lg text-primary">Intellilearn</span>
+                        <span className="text-xs text-muted-foreground -mt-1">Learning Companion</span>
+                    </div>
                 </div>
             </Link>
             <div className="flex items-center gap-8">
